@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F9FD"
+    tools:context=".MainActivity">
+
+    <!-- AppBar Title -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Water Quality Dashboard"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.01"
+        android:textColor="#21304C"
+        android:gravity="center"
+        android:paddingTop="38dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Sensor Readings Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/readingsCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="12dp"
+        android:backgroundTint="#FFFFFF"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/titleText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="28dp">
+
+            <TextView
+                android:id="@+id/cardTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Live Sensor Readings"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="#4B6CD0"
+                android:gravity="center"
+                android:paddingBottom="10dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.2dp"
+                android:background="#F1F1F1"
+                android:layout_marginBottom="18dp"/>
+
+            <!-- Temperature -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingBottom="18dp">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@android:drawable/ic_menu_compass"
+                    android:tint="#1DA8C7"
+                    android:contentDescription="Temperature"/>
+                <TextView
+                    android:id="@+id/labelTemp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Temperature"
+                    android:textSize="16sp"
+                    android:textColor="#234B55"
+                    android:paddingStart="10dp"/>
+                <TextView
+                    android:id="@+id/textTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-- ℃"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#1DA8C7"/>
+            </LinearLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EDF1FA"/>
+
+            <!-- pH -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@android:drawable/ic_dialog_info"
+                    android:tint="#7C39FA"
+                    android:contentDescription="pH"/>
+                <TextView
+                    android:id="@+id/labelPh"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="pH"
+                    android:textSize="16sp"
+                    android:textColor="#234B55"
+                    android:paddingStart="10dp"/>
+                <TextView
+                    android:id="@+id/textPh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#7C39FA"/>
+            </LinearLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EDF1FA"/>
+
+            <!-- Turbidity -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@android:drawable/ic_menu_search"
+                    android:tint="#00BBA7"
+                    android:contentDescription="Turbidity"/>
+                <TextView
+                    android:id="@+id/labelTurbidity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Turbidity"
+                    android:textSize="16sp"
+                    android:textColor="#234B55"
+                    android:paddingStart="10dp"/>
+                <TextView
+                    android:id="@+id/textTurbidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-- FNU"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#00BBA7"/>
+            </LinearLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EDF1FA"/>
+
+            <!-- Oxygen -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="18dp"
+                android:paddingBottom="18dp">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@android:drawable/ic_menu_mylocation"
+                    android:tint="#219150"
+                    android:contentDescription="O₂"/>
+                <TextView
+                    android:id="@+id/labelOxygen"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="O₂ (mg/L)"
+                    android:textSize="16sp"
+                    android:textColor="#234B55"
+                    android:paddingStart="10dp"/>
+                <TextView
+                    android:id="@+id/textOxygen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#219150"/>
+            </LinearLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EDF1FA"/>
+
+            <!-- Conductivity -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="18dp">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@android:drawable/ic_menu_manage"
+                    android:tint="#4B6CD0"
+                    android:contentDescription="Conductivity"/>
+                <TextView
+                    android:id="@+id/labelConductivity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Conductivity"
+                    android:textSize="16sp"
+                    android:textColor="#234B55"
+                    android:paddingStart="10dp"/>
+                <TextView
+                    android:id="@+id/textConductivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-- μS/cm"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="#4B6CD0"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
